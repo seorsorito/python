@@ -1,0 +1,7 @@
+setup.py
+FuncionesMatematicas.egg-info/PKG-INFO
+FuncionesMatematicas.egg-info/SOURCES.txt
+FuncionesMatematicas.egg-info/dependency_links.txt
+FuncionesMatematicas.egg-info/top_level.txt
+Módulos/modulos matematicos.py
+Módulos/Funciones_Matematicas/Funciones.py

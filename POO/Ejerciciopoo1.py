@@ -21,11 +21,12 @@ class CuentaCorriente():
         pregunta2=input("quieres retirar? ")
         if pregunta2=="si":
             retiro=int(input("Cuanto quieres retirar? "))
-            self.saldo=self.saldo+retiro
+            self.saldo=self.saldo-retiro
         else:
             pass
 
 p1=CuentaCorriente("Victor",67455645,11000)
+
 p1.ingresar()
 p1.retirar()
 print(p1.getdatos())
