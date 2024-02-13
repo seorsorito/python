@@ -1,0 +1,1 @@
+metemos un documento dentro de la carpeta creada en cmd
