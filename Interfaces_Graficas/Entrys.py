@@ -43,14 +43,14 @@ cuadroopiniones=Text(Miframe,width=15,height=7) #se usan para textos de gran tam
 cuadroopiniones.grid(row=5,column=1,padx=15,pady=6)
 barravertical=Scrollbar(Miframe,command=cuadroopiniones.yview) #barra vertical para mover. Con comand decimos a quien afecta y yview para decir que es vertical
 barravertical.grid(row=5,column=2, sticky="nsew") #con sticky hacemos la barra a la altura del cuadro de comentarios y puede usarse
-#comentariolabel.config(yscrollcomand=barravertical.set)
+#cuadroopiniones.config(yscrollcomand=barravertical.set)
 
 def funcionboton():
     #MessageBox.showinfo("saludo","hola desde tkinter")
     #Variabletexto.set("introduzca nombre")
     informacion= Variabletexto.get()
-    print(informacion)
-
+    MessageBox.showinfo("informacion",informacion)
+    #cuadroopiniones.insert(INSERT,"Texto de ejemplo que se inserta")
 botonEnviar=Button(raiz, text="Enviar",command=funcionboton) #hemos creado un boton directamente en la raiz 
 botonEnviar.pack()
 
