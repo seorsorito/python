@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 def mostrar_pantalla(self,valor):
     self.Pantalla.insert(END,valor)
 def borrar_pantalla(self):

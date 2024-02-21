@@ -2,6 +2,8 @@ from tkinter import *
 
 from Modulo_Calculadoras.Botones_Calculadora import *
 raiz =Tk()
+raiz.resizable(0,0) #con esto conseguimos no poder aumentar la pantalla con el raton
+
 
 class calculadora:
 
@@ -14,6 +16,7 @@ class calculadora:
         #agregramos display
 
         self.Pantalla= Entry(ventana,font="Arial 21")
+        
 
         #ubicar display (pantalla negra)
 
@@ -36,7 +39,7 @@ class calculadora:
         boton5 = colocar_boton(self,5)
         boton6 = colocar_boton(self,6)
         botonMul = colocar_boton(self,u"\u00D7") #con caracter unicode
-        botonMul.config(text="x") #una forma de que aparezca la x en pantalla pero que la funcion eval actue
+        #botonMul.config(text=u"\u00D7") #una forma de que aparezca la x en pantalla pero que la funcion eval actue
 
         #---------------------------------------------
 
