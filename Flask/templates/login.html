@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    <form action="" method="post" novalidate>
+
+        {{form.hidden_tag()}} <!--para la proteccion contra csrf-->
+
+        {{form.email.label}}
+        {{form.email(size=15)}}
+        {% for error in form.email.errors %}
+        <span style="color: red;">{{error}}</span>
+        <br>
+        {% endfor %}
+        <br>
+
+        {{form.password.label}}
+        {{form.password}}
+        {% for error in form.password.errors %}
+        <span style="color: red;">{{error}}</span>
+        <br>
+        {% endfor %}
+        <br>
+        {{form.remember_me()}} {{form.remember_me.label}}
+        <br>
+
+        {{form.submit()}}
+
+
+    </form>
+{% endblock %}

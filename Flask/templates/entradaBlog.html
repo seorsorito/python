@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Blog {% endblock %}
+
+{% block content %}
+
+    <form action="" method="post" novalidate>
+
+        {{form.hidden_tag()}} <!--para la proteccion contra csrf-->
+
+        {{form.title.label}}
+        {{form.title(size=25)}}
+        {% for error in form.title.errors %}
+        <span style="color: red;">{{error}}</span>
+        <br>
+        {% endfor %}
+        <br>
+
+        {{form.content.label}}
+        {{form.content}}
+        {% for error in form.content.errors %}
+        <span style="color: red;">{{error}}</span>
+        <br>
+        {% endfor %}
+        <br>
+
+        {{form.submit()}}
+
+
+    </form>
+{% endblock %}

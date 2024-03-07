@@ -1,0 +1,35 @@
+{% extends "base.html" %} <!--hereda de la plantilla base-->
+
+{% block title %}Inicio {% endblock %}
+
+{% block content %}
+    Este es el mensaje desde la pagina creada
+    <br/>
+    {{numero_empleados}}
+    {{lista_post}}
+    <br/>
+    <a href="/quienessomos">A la pagina de quienes</a><br>
+    <a href="{{url_for('usuarios',Idusuario=9) }}"> datos del usuario</a><br> <!--esto en vez de ir a la url va a la vista y puedes cambiar la url sin problema-->
+    
+    <!--El nombre introducido en el formulario es: {{nombre}}<br>-->
+    
+    <a href="{{url_for('blog')}}"> post del usuario</a><br>
+
+    <ul>
+        {% if lista_post %}
+            {{lista_post}}
+            {% for post in lista_post %}
+
+                <li style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; color: blue;" >{{post.title}}</li>
+                <ul><li>{{post['content']}}</li></ul>
+
+
+            {% endfor %}
+        {% else %}
+            <li>No hay post disponibles</li>
+        {% endif %}
+
+    </ul>
+
+
+{% endblock %}

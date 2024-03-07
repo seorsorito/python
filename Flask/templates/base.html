@@ -1,0 +1,49 @@
+<!--Siempre tiene que estar dentro de la carpeta templates y nunca en una subcarpeta-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title> <!--el titulo se ajustará a cada página-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+</head>
+<body>
+    
+    <ul id="barra"> <!--barra de menu que saldra en cada pagina-->
+
+        <li id = "elem"><a href="{{url_for('inicio')}}">Inicio</a></li>
+        <li id = "elem"><a href="{{url_for('servicios')}}">Servicios</a></li>
+        <li id = "elem"><a href="{{url_for('productos')}}">Productos</a></li>
+        <li><a href="{{url_for('contacto')}}">Contacto</a></li>
+        
+
+    </ul>
+
+    <div>
+        <ul style="list-style: none;">
+        
+        {% if current_user.is_anonymous %}
+        <li>Usuario: Anónimo</li>
+        <li><a href="{{url_for('login')}}">login</a></li>
+        <li><a href="{{url_for('registro')}}">Inscribete</a></li>
+        
+        {% else %}
+        
+        <li>Usuario: {{current_user.name}}</li>
+        <li><a href="{{url_for('logout')}}">Salir</a></li>
+
+        {% endif %}
+        
+        </ul>
+
+
+
+    </div>
+
+    {% block content %} <!--contenido de cada pagina-->
+    
+    
+    {% endblock %}
+    
+</body>
+</html>
